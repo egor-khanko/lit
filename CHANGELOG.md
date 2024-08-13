@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 
 ## [WIP]
+- Defaults to ruby 3.2.5+
+- Supports Rails 7.x only, drops support for older versions
 - Efforts to use Vanilla JS and remove jQuery [WIP]
 - Fix for `Undefined method 'id' for False class` error in view partial [WIP]
 
