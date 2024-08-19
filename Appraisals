@@ -19,6 +19,7 @@ appraise 'rails-7.0' do
   gem "minitest-vcr", github: "manuelvanrijn/minitest-vcr"
   gem "m", "~> 1.6"
   gem "google-cloud-translate", "~> 2.0"
+  gem "puma"
 end
 
 appraise 'rails-7.1' do
@@ -42,4 +43,5 @@ appraise 'rails-7.1' do
   gem "minitest-vcr", github: "manuelvanrijn/minitest-vcr"
   gem "m", "~> 1.6"
   gem "google-cloud-translate", "~> 2.0"
+  gem "puma"
 end

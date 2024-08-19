@@ -8,8 +8,8 @@ module Lit
   mattr_accessor :key_value_engine
   mattr_accessor :redis_url
   mattr_accessor :storage_options
-  mattr_accessor :humanize_key
-  mattr_accessor :humanize_key_ignored_keys
+  mattr_accessor :store_humanized_key
+  mattr_accessor :store_humanized_key_ignored_keys
   mattr_accessor :humanize_key_ignored
   mattr_accessor :ignored_keys
   mattr_accessor :ignore_yaml_on_startup
@@ -29,10 +29,10 @@ module Lit
     @@table_exists ||= check_if_table_exists
     if loader.nil? && @@table_exists
       self.loader ||= Loader.new
-      Lit.humanize_key = false if Lit.humanize_key.nil?
-      Lit.humanize_key_ignored_keys = [] if Lit.humanize_key_ignored_keys.nil?
+      Lit.store_humanized_key = false if Lit.store_humanized_key.nil?
+      Lit.store_humanized_key_ignored_keys = [] if Lit.store_humanized_key_ignored_keys.nil?
       Lit.humanize_key_ignored = %w[i18n date datetime number time support]
-      Lit.humanize_key_ignored |= Lit.humanize_key_ignored_keys
+      Lit.humanize_key_ignored |= Lit.store_humanized_key_ignored_keys
       Lit.humanize_key_ignored = Regexp.new("(#{Lit.humanize_key_ignored.join("|")}).*")
       Lit.ignore_yaml_on_startup = true if Lit.ignore_yaml_on_startup.nil?
 

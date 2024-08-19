@@ -8,7 +8,7 @@ class I18nBackendTest < ActiveSupport::TestCase
   def setup
     @old_backend = I18n.backend
     @old_locale = I18n.locale
-    @old_humanize_key = Lit.humanize_key
+    @old_humanize_key = Lit.store_humanized_key
     @old_available_locales = ::Rails.configuration.i18n.available_locales
   end
 
@@ -17,7 +17,7 @@ class I18nBackendTest < ActiveSupport::TestCase
     I18n.backend = @old_backend
     I18n.backend = @old_backend
     I18n.locale = @old_locale
-    Lit.humanize_key = @old_humanize_key
+    Lit.store_humanizes_key = @old_humanize_key
   end
 
   test "properly returns available locales" do
@@ -32,7 +32,7 @@ class I18nBackendTest < ActiveSupport::TestCase
   end
 
   test "wont humanize key, if key is ignored" do
-    Lit.humanize_key = true
+    Lit.store_humanized_key = true
     I18n.locale = :en
     test_key = "date.this_will_get_humanized"
     assert_equal I18n.t(test_key), "Translation missing: en.date.this_will_get_humanized"
@@ -43,7 +43,7 @@ class I18nBackendTest < ActiveSupport::TestCase
   end
 
   test "will not call additional queries when nil values in a fallback key chain have been cached" do
-    Lit.humanize_key = false
+    Lit.store_humanized_key = false
     I18n.locale = :en
 
     test_key = :"test.key"

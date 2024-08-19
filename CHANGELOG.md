@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - Supports Rails 7.x only, drops support for older versions
 - Efforts to use Vanilla JS and remove jQuery [WIP]
 - Fix for `Undefined method 'id' for False class` error in view partial [WIP]
+- REMOVED Lit.humanize_key - it's replaced by Lit.store_humanized_key variable
 
 ## [1.1.6] - 2022-03-28
 ### Fixed

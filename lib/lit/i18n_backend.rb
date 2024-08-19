@@ -136,7 +136,7 @@ module Lit
             content = default
           end
           # if we have content now, let's store it in cache
-          if content.present? && content != MISSING_TRANSLATION
+          if content.present?
             content = Array.wrap(content).compact.reject { |e| e == MISSING_TRANSLATION }.reject(&:empty?).reverse.find do |default_cand|
               @cache[key_with_locale] = default_cand
               @cache[key_with_locale]
