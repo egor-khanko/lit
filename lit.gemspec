@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + %w[MIT-LICENSE Rakefile README.md]
   s.add_dependency "emoji_flag"
   s.add_dependency "jquery-rails"
+  s.add_dependency "coffee-rails"
+  s.add_dependency "sassc"
   s.add_dependency "rails", ">= 7.0"
 
   s.add_development_dependency "appraisal", "~> 2.5.0"
