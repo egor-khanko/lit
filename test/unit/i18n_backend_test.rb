@@ -17,7 +17,7 @@ class I18nBackendTest < ActiveSupport::TestCase
     I18n.backend = @old_backend
     I18n.backend = @old_backend
     I18n.locale = @old_locale
-    Lit.store_humanizes_key = @old_humanize_key
+    Lit.store_humanized_key = @old_humanize_key
   end
 
   test "properly returns available locales" do

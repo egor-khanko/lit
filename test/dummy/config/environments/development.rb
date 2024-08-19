@@ -27,4 +27,7 @@ Dummy::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Highlight code that triggered database queries in logs.
+  config.active_record.verbose_query_logs = true
 end

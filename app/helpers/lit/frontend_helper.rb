@@ -32,7 +32,7 @@ module Lit::FrontendHelper
       if Lit::Services::HumanizeService.should_humanize?(key)
         return Lit::Services::HumanizeService.humanize_and_cache(key, options)
       else
-        return Lit::Services::HumanizeService.humanize(key, options)
+        return Lit::Services::HumanizeService.humanize(key)
       end
 
       super

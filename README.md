@@ -58,6 +58,8 @@ gem 'lit'
 
 You may want to take a look at generated initializer in `config/initializers/lit.rb` and change some default configuration options.
 
+Note `Lit.ignore_yaml_on_startup = true` setting - when it's set to true, Lit won't automatically import translations from yaml and add them to interface. Either change this to `false` or import using rake task
+
 ### So... again - what is it and how to use it?
 *Lit* is Rails engine - it runs in it's own namespace, by default it's available under `/lit`. It provides UI for managing translations of your app.
 

@@ -7,11 +7,11 @@ module Lit
     # Caches the value of humanization
     class HumanizeService
       def self.should_humanize?(key)
-        Lit.store_humanizes_key && Lit.humanize_key_ignored.match(key).nil?
+        Lit.store_humanized_key && Lit.humanize_key_ignored.match(key).nil?
       end
 
       def self.humanize(key)
-        key.to_s.split(".").last.humanize
+        key.to_s.split(".").last.humanize.titleize
       end
 
       def self.humanize_and_cache(key, options)

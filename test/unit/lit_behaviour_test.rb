@@ -10,18 +10,18 @@ class LitBehaviourTest < ActiveSupport::TestCase
     Lit::LocalizationVersion.delete_all
 
     @old_load_path = I18n.load_path
-    @old_humanize_key = Lit.humanize_key
+    @old_humanize_key = Lit.store_humanized_key
     @old_backend = I18n.backend
     @old_ignore = Lit.ignore_yaml_on_startup
 
     I18n.load_path = []
-    Lit.humanize_key = false
+    Lit.store_humanized_key = false
     I18n.backend = Backend.new(Lit::Cache.new)
     super
   end
 
   def teardown
-    Lit.humanize_key = @old_humanize_key
+    Lit.store_humanized_key = @old_humanize_key
     I18n.backend = @old_backend
     I18n.load_path = @old_load_path
     Lit.ignore_yaml_on_startup = @old_ignore
@@ -236,7 +236,7 @@ class LitBehaviourTest < ActiveSupport::TestCase
   end
 
   test "cache tree structure of keys and retrieve it from redis like I18n does" do
-    Lit.humanize_key = true
+    Lit.store_humanized_key = true
     assert_difference "Lit::LocalizationKey.count", 2 do
       I18n.t("scopes.hash.sub_one", default: "Left leaf")
       I18n.t("scopes.hash.sub_two", default: "Right leaf")

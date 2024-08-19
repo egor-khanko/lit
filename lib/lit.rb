@@ -80,6 +80,11 @@ module Lit
   def self.fallback=(_value)
     ::Rails.logger.error "[DEPRECATION] Lit.fallback= has been deprecated, please use `config.i18n.fallbacks` instead"
   end
+
+  def self.humanize_key=(value)
+    ::Rails.logger.error "[DEPRECATION] Lit.humanize_key= has been deprecated, please use `Lit.store_humanized_key` instead"
+    Lit.store_humanized_key = value
+  end
 end
 
 require "lit/rails" if defined?(Rails)
