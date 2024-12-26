@@ -10,26 +10,26 @@
 
 <% @sources.each do |source| %>
   <tr>
-    <td><%= link_to source.identifier, lit.source_path(source) %></td>
+    <td><%= link_to source.identifier, source_path(source) %></td>
     <td><%= source.last_updated_at.to_s(:db) unless source.last_updated_at.nil? %></td>
     <td><%= source.last_change %></td>
     <td>
-      <%= link_to lit.source_incomming_localizations_path(source), :title=>t('lit.common.browse_incomming', :default=>"Browse incomming localizations") do %>
+      <%= link_to source_incomming_localizations_path(source), :title=>t('lit.common.browse_incomming', :default=>"Browse incomming localizations") do %>
         <%= draw_icon 'search' %>
       <% end %>
-      <%= link_to lit.synchronize_source_path(source), :title=>t('lit.common.synchronize', :default=>"Synchronize") do %>
+      <%= link_to synchronize_source_path(source), :title=>t('lit.common.synchronize', :default=>"Synchronize") do %>
         <%= draw_icon 'refresh' %>
       <% end %>
-      <%= link_to lit.source_path(source), :title=>t('lit.common.show', :default=>"Show") do %>
+      <%= link_to source_path(source), :title=>t('lit.common.show', :default=>"Show") do %>
         <%= draw_icon 'zoom-in' %>
       <% end %>
-      <%= link_to lit.edit_source_path(source), :title=>t('lit.common.edit', :default=>"Edit") do %>
+      <%= link_to edit_source_path(source), :title=>t('lit.common.edit', :default=>"Edit") do %>
         <%= draw_icon 'pencil' %>
       <% end %>
-      <%= link_to lit.touch_source_path(source), :title=>t('lit.common.touch', :default=>"Touch (update) last_updated_at"), :method => :put, :data => { :confirm => 'Are you sure?' } do %>
+      <%= link_to touch_source_path(source), :title=>t('lit.common.touch', :default=>"Touch (update) last_updated_at"), :method => :put, :data => { :confirm => 'Are you sure?' } do %>
         <%= draw_icon 'clock-o' %>
       <% end %>
-      <%= link_to lit.source_path(source), :method => :delete, :data => { :confirm => 'Are you sure?' }, :title=>t('lit.common.delete', :default=>"Delete") do %>
+      <%= link_to source_path(source), :method => :delete, :data => { :confirm => 'Are you sure?' }, :title=>t('lit.common.delete', :default=>"Delete") do %>
         <%= draw_icon 'trash-o' %>
       <% end %>
     </td>
