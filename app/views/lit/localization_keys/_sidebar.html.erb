@@ -13,25 +13,25 @@
     <% end %>
     <ul class="nav nav-pills nav-stacked">
       <li class="<%= "active" if params[:action]=='not_translated' %>">
-        <%= link_to lit.not_translated_localization_keys_path do -%>
+        <%= link_to not_translated_localization_keys_path do -%>
           <%= draw_icon 'pencil' %>
           not translated
         <% end %>
       </li>
       <li class="<%= "active" if params[:action]=='index' %>">
-        <%= link_to lit.localization_keys_path do -%>
+        <%= link_to localization_keys_path do -%>
           <%= draw_icon 'list' %>
           all
         <% end %>
       </li>
       <li class="<%= "active" if params[:action]=='starred' %>">
-        <%= link_to lit.starred_localization_keys_path do -%>
+        <%= link_to starred_localization_keys_path do -%>
           <%= draw_icon 'star' %>
           starred
         <% end %>
       </li>
       <li class="<%= "active" if params[:action]=='visited_again' %>">
-        <%= link_to lit.visited_again_localization_keys_path do -%>
+        <%= link_to visited_again_localization_keys_path do -%>
           <%= draw_icon 'undo' %>
           deleted and visited again
         <% end %>

@@ -49,7 +49,7 @@ module Lit::FrontendHelper
   def lit_frontend_assets
     return unless lit_authorized?
 
-    meta = content_tag :meta, '', value: lit.find_localization_localization_keys_path, name: 'lit-url-base'
+    meta = content_tag :meta, '', value: find_localization_localization_keys_path, name: 'lit-url-base'
     safe_join [javascript_lit_tag, stylesheet_lit_tag, meta]
   end
 

@@ -25,7 +25,7 @@ module Lit
     end
 
     def redirect_to_back_or_default(fallback_location: nil)
-      fallback_location ||= lit.localization_keys_path
+      fallback_location ||= localization_keys_path
       if respond_to?(:redirect_back)
         redirect_back fallback_location: fallback_location
       elsif referer.present? && referer != request.env['REQUEST_URI']

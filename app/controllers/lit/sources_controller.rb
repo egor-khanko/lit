@@ -22,7 +22,7 @@ module Lit
       else
         SynchronizeSourceService.new(@source).execute
       end
-      redirect_to lit.source_incomming_localizations_path(@source)
+      redirect_to source_incomming_localizations_path(@source)
     end
 
     def touch
